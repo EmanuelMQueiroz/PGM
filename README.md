@@ -3,8 +3,7 @@
 ## GPA1.jl
 This file contains the implementation of the Projected Gradient Method equipped with Armijo's linesearch along feasible directions.
 
-### Function GPA1
-Monotone Armijo linesearch along feasible directions.
+### Function GPA1 - Monotone Armijo linesearch along feasible directions
 
 #### Arguments
 
@@ -22,8 +21,7 @@ Monotone Armijo linesearch along feasible directions.
 - **ierror (Int64):** The error of linesearch (0 - no error, 1 - step length too small)
 - **evalf (Int64):** Number of function evaluations in the current iteration
 
-### Function method1
-Gradient Projected Method with monotone Armijo linesearch along feasible directions.
+### Function method1 - Gradient Projected Method with monotone Armijo linesearch along feasible directions
 
 #### Arguments
 
@@ -48,8 +46,7 @@ Gradient Projected Method with monotone Armijo linesearch along feasible directi
 ## GPA2.jl
 This file contains the implementation of the Projected Gradient Method equipped with nonmonotone Max type linesearch along feasible directions.
 
-### Function GPA2
-Nonmonotone Max type linesearch along feasible directions.
+### Function GPA2 - Nonmonotone Max type linesearch along feasible directions.
 
 #### Arguments
 
@@ -70,8 +67,7 @@ Nonmonotone Max type linesearch along feasible directions.
 - **evalf (Int64):** Number of function evaluations in the current iteration
 - **fmax (Float64):** Maximum of the last $M$ iterations
 
-### Function method2
-Gradient Projected Method with monotone Armijo linesearch along feasible directions.
+### Function method2 - Gradient Projected Method with monotone Armijo linesearch along feasible directions
 
 #### Arguments
 
@@ -97,8 +93,7 @@ Gradient Projected Method with monotone Armijo linesearch along feasible directi
 ## GPA3.jl
 This file contains the implementation of the Projected Gradient Method equipped with nonmonotone Average type linesearch along feasible directions.
 
-### Function GPA3
-Nonmonotone Average type linesearch along feasible directions.
+### Function GPA3 - Nonmonotone Average type linesearch along feasible directions
 
 #### Arguments
 
@@ -117,9 +112,8 @@ Nonmonotone Average type linesearch along feasible directions.
 - **ierror (Int64):** The error of linesearch (0 - no error, 1 - step length too small)
 - **evalf (Int64):** Number of function evaluations in the current iteration
 
-### Function method3
-Gradient Projected Method with nonmonotone Average type linesearch along feasible directions.
-method3(x, f, ∇f, ε, η, max_iter, PG3, projection)
+### Function method3 - Gradient Projected Method with nonmonotone Average type linesearch along feasible directions
+
 #### Arguments
 
 - **$\boldsymbol{x}$ (Vector):** Initial point
@@ -144,8 +138,7 @@ method3(x, f, ∇f, ε, η, max_iter, PG3, projection)
 ## GPA4.jl
 This file contains the implementation of the Projected Gradient Method equipped with Armijo linesearch along the projection arc.
 
-### Function GPA2
-Armijo linesearch along the projection arc.
+### Function GPA2 - Armijo linesearch along the projection arc
 
 #### Arguments
 
@@ -163,8 +156,7 @@ Armijo linesearch along the projection arc.
 - **ierror (Int64):** The error of linesearch (0 - no error, 1 - step length too small)
 - **evalf (Int64):** Number of function evaluations
 
-### Function method4
-Gradient Projected Method with Armijo linesearch along the projection arc.
+### Function method4 - Gradient Projected Method with Armijo linesearch along the projection arc
 
 #### Arguments
 
@@ -189,14 +181,13 @@ Gradient Projected Method with Armijo linesearch along the projection arc.
 ## projections.jl
 This file contains projection functions for 6 different feasible sets, whose parameters can be easily modified.
 
-### Projection functions for diferent feasible sets
-
-- **projection1:** $C = \{x \in \mathbb{R}^n; |x-c| \le 20 \}$, onde $c = (-50,0,0,0,\ldots)$.
-- **projection2:** $C = \{x \in \mathbb{R}^n; |x-c| \le 20 \}$, onde $c = (-50,0,0,0,\ldots)$.
-- **projection3:** $C = \{x \in \mathbb{R}^n ; \langle a, x \rangle = 0\}$, onde $a = (1,1,\cdots,1)$
-- **projection4:** $C = \{x \in \mathbb{R}^n ; \langle a, x \rangle = 0\}$, onde $a = (1,1,\cdots,1)$
-- **projection5:** $C = \{x \in \mathbb{R}^n ; \langle a, x \rangle \le 0\}$, onde $a = (-1,-1,\cdots,-1)$
-- **projection6:** $C = \{x \in \mathbb{R}^n ; Ax = (0,0)\}$, onde $A \in \mathbb{R}(2,n)$ tem posto $2$
+### Examples of projection functions for diferent feasible sets
+- **projection1:** $\Omega_1 =$$`\left\{x \in \mathbb{R}^n; |x-c| \le 10 \right\}`$, onde $c = (1,1,\ldots,1)$.
+- **projection2:** $\Omega_2 =$$`\left\{x \in \mathbb{R}^n; x_j \in (-\infty,5], \ j=1,2,\ldots,n \right\}`$.
+- **projection3:** $\Omega_3 =$$`\left\{x \in \mathbb{R}^n; x_j \in [-5,10], \ j=1,2,\ldots,n \right\}`$.
+- **projection4:** $\Omega_4 =$$`\left\{x \in \mathbb{R}^n ; \langle a, x \rangle = 10\right\}`$, onde $a = (1,1,\ldots,1)$.
+- **projection5:** $\Omega_5 =$$`\left\{x \in \mathbb{R}^n ; \langle a, x \rangle \le 10\right\}`$, onde $a = (10,10,\cdots,10)$.
+- **projection6:** $\Omega_6 =$$`\left\{x \in \mathbb{R}^n ; Ax = (1,1,1)\right\}`$, onde $A \in \mathbb{R}(3,n)$ tem posto $3$.
 
 ## main.jl
 This file performs a test on the Rosenbrock or Elipsoid function using the projected gradient method equipped with one of the PG1, PG2, PG3 or PG4 strategies and generates a table with the data obtained during the optimization process.
