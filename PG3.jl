@@ -33,7 +33,7 @@ function PG3(x, f, ∇f, σ, min_step, γ_start, zk, f_average)
             break 
         end       
     end
-    return (γ, ierror, evalf, f_average)
+    return (γ, ierror, evalf)
 end
 
 function method3(x, f, ∇f, ε, η, max_iter, PG3, projection)
@@ -79,7 +79,7 @@ function method3(x, f, ∇f, ε, η, max_iter, PG3, projection)
 
         Q = η * Q + 1.0
         f_average = (η * Q * f_average + f(x))/Q
-        (γ, ierror, evalf, f_average) = PG3(x, f, ∇f, σ, min_step, γ_start, zk, f_average) 
+        (γ, ierror, evalf) = PG3(x, f, ∇f, σ, min_step, γ_start, zk, f_average) 
         
         if ierror == 1
             break
