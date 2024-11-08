@@ -1,6 +1,5 @@
 ## Main Code ##
 
-include("problems.jl")
 include("projections.jl")
 include("PG1.jl")
 include("PG2.jl")
