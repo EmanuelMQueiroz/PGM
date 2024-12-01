@@ -1,4 +1,26 @@
-# Projected Gradient Method
+# Uma análise numérica dos métodos do Gradiente Projetado ao longo de arcos de projeção e de direções viáveis
+
+## main.jl
+This file performs a test on the Rosenbrock or Elipsoid function using the projected gradient method equipped with one of the PG1, PG2, PG3 or PG4 strategies and generates a table with the data obtained during the optimization process.
+
+### Code overview
+The script is organized into the following sections:
+
+1. **Imports and Inclusions:** The script imports the necessary packages (`LinearALgebra`, `DataFrames` and `Random`) and includes the essential Julia files: `projections.jl`, `GPA1.jl`, `GPA2.jl`, `GPA3.jl` e `GPA4.jl`.
+
+2. **Rotated-Elipsoid function:**
+   - **$f$ (Function):** The Rotated-Elipsoid function
+   - **$\nabla f$ (Function):** The gradient of the Rotated-Elipsoid function
+
+2. **Rosenbrock function:**
+   - **$f$ (Function):** The Rosenbrock function
+   - **$\nabla f$ (Function):** The gradient of the Rosenbrock function
+
+4. **Parameters:**
+Definition of all parameters to be used in the optimization process.
+
+6. **Optimization Cycle:**
+The script performs the gradient method optimization for the chosen case and show the informations at the end of process.
 
 ## GPA1.jl
 This file contains the implementation of the Projected Gradient Method equipped with Armijo's linesearch along feasible directions.
@@ -188,25 +210,3 @@ This file contains projection functions for 6 different feasible sets, whose par
 - **projection4:** $\Omega_4 =$$`\left\{x \in \mathbb{R}^n ; \langle a, x \rangle = 10\right\}`$, onde $a = (1,1,\ldots,1)$.
 - **projection5:** $\Omega_5 =$$`\left\{x \in \mathbb{R}^n ; \langle a, x \rangle \le 10\right\}`$, onde $a = (10,10,\cdots,10)$.
 - **projection6:** $\Omega_6 =$$`\left\{x \in \mathbb{R}^n ; Ax = (1,1,1)\right\}`$, onde $A \in \mathbb{R}(3,n)$ tem posto $3$.
-
-## main.jl
-This file performs a test on the Rosenbrock or Elipsoid function using the projected gradient method equipped with one of the PG1, PG2, PG3 or PG4 strategies and generates a table with the data obtained during the optimization process.
-
-### Code overview
-The script is organized into the following sections:
-
-1. **Imports and Inclusions:** The script imports the necessary packages (`LinearALgebra`, `DataFrames` and `Random`) and includes the essential Julia files: `projections.jl`, `GPA1.jl`, `GPA2.jl`, `GPA3.jl` e `GPA4.jl`.
-
-2. **Rotated-Elipsoid function:**
-   - **$f$ (Function):** The Rotated-Elipsoid function
-   - **$\nabla f$ (Function):** The gradient of the Rotated-Elipsoid function
-
-2. **Rosenbrock function:**
-   - **$f$ (Function):** The Rosenbrock function
-   - **$\nabla f$ (Function):** The gradient of the Rosenbrock function
-
-4. **Parameters:**
-Definition of all parameters to be used in the optimization process.
-
-6. **Optimization Cycle:**
-The script performs the gradient method optimization for the chosen case and show the informations at the end of process.
