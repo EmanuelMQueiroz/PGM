@@ -1,5 +1,5 @@
 # Uma análise numérica dos métodos do Gradiente Projetado ao longo de arcos de projeção e de direções viáveis
-Este repositório contém os códigos em Julia referentes à monografia intitulada "Uma análise numérica dos métodos do Gradiente Projetado ao longo de arcos de projeção e de direções viáveis", de autoria de Emanuel Mendes Queiroz.
+This repository contains the Julia codes referring to the course conclusion work entitled "Uma análise numérica dos métodos do Gradiente Projetado ao longo de arcos de projeção e de direções viáveis", authored by Emanuel Mendes Queiroz.
 
 ## main.jl
 This file performs a test on the Rosenbrock or Elipsoid function using the projected gradient method equipped with one of the PG1, PG2, PG3 or PG4 strategies and generates a table with the data obtained during the optimization process.
