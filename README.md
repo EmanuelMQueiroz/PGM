@@ -161,7 +161,7 @@ This file contains the implementation of the Projected Gradient Method equipped 
 ## GPA4.jl
 This file contains the implementation of the Projected Gradient Method equipped with Armijo linesearch along the projection arc.
 
-### Function GPA2 - Armijo linesearch along the projection arc
+### Function GPA4 - Armijo linesearch along the projection arc
 
 #### Arguments
 
